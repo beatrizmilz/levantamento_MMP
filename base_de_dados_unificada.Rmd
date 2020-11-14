@@ -1,0 +1,70 @@
+---
+title: "Análise"
+author: "Beatriz Milz"
+date: "13/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pesquisa nas bases de dados
+
+## Termos Chave
+
+
+Foram pesquisados artigos que continham, em seu título, os seguintes termos: “Macrometrópole”, “Macrometrópole Paulista”, “Macrometrópole de São Paulo”, “*Macrometropolis*” e “*Sao Paulo Macrometropolis*”.
+
+
+
+nova: PAULISTA MACROMETROPOLIS, macrometropolização
+
+
+metrópole paulista??
+
+
+
+
+### *Scientific Electronic Library Online* (SciELO) (http://www.scielo.org/)
+13/11/2020
+Query:  ((macrometrópole paulista) OR (macrometrópole) OR (macrometrópole de são paulo)) OR (sao paulo macrometropolis) OR (macrometropolis) 
+Todos os índices
+30 resultados
+Exportar: Formato CSV, todos os registros
+
+Dados: Título, Autores, Jornal, Idioma, Ano de publicacao, URL
+
+```{r}
+pesquisa_scielo_13_11_2020 <- readr::read_csv("dados/pesquisa_scielo_13-11-2020_2.csv")
+
+```
+
+### Periódicos CAPES (http://www.periodicos.capes.gov.br/)
+13/11/2020
+
+Filtro: 
+
+tipo de material: artigos
+
+OK - Busca 1 : No título: Macrometrópole Paulista OR Macrometrópole : 14 resultados
+
+
+OK - Busca 2: No título: macrometrópole de são paulo OR sao paulo macrometropolis : 6 resultados
+
+
+OK - Busca 3: No título: macrometropolis : 5 resultados
+
+OK - Busca 4: No título: paulista macrometropolis : 1 resultados
+
+
+
+- *Science Direct* (https://www.sciencedirect.com)
+
+
+- *Google Scholar* (https://scholar.google.com.br/)
+
+
+Depois: conferir com a tabela de 2019 se nao falta nenhum trabalho
+
+
