@@ -14,16 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Termos Chave
 
 
-Foram pesquisados artigos que continham, em seu título, os seguintes termos: “Macrometrópole”, “Macrometrópole Paulista”, “Macrometrópole de São Paulo”, “*Macrometropolis*” e “*Sao Paulo Macrometropolis*”.
-
-
-
-nova: PAULISTA MACROMETROPOLIS, macrometropolização
-
-
-metrópole paulista??
-
-
+Foram pesquisados artigos que continham, em seu título, os seguintes termos: “Macrometrópole”, “Macrometrópole Paulista”, “Macrometrópole de São Paulo”, macrometropolização, “*Macrometropolis*” e “*Sao Paulo Macrometropolis*”.
 
 
 ### *Scientific Electronic Library Online* (SciELO) (http://www.scielo.org/)
@@ -57,14 +48,40 @@ OK - Busca 3: No título: macrometropolis : 5 resultados
 
 OK - Busca 4: No título: paulista macrometropolis : 1 resultados
 
+OK - Busca 5: No título: macrometropolização : 0 resultados
 
 
-- *Science Direct* (https://www.sciencedirect.com)
+### Scopus
+
+Busca: 20/11/2020
+
+Query:
+TITLE ( "macrometrópole"  OR  "macrometrópole paulista"  OR  "macrometrópole de são paulo"  OR  "São Paulo Macrometropolis"  OR  "Macrometropolis"  OR  "macrometropolização" )  
+15 resultados
 
 
-- *Google Scholar* (https://scholar.google.com.br/)
+```{r}
+# scopus_file <- "dados/scopus-20-11-2020.bib"
+# df_scopus <- bibliometrix::convert2df(file = scopus_file,
+#                                       dbsource = "scopus",
+#                                       format = "bibtex")
+```
 
 
-Depois: conferir com a tabela de 2019 se nao falta nenhum trabalho
+### Google Scholar
+Busca: 20/11/2020
+
+Query: "macrometrópole"  OR "macrometrópole paulista"  OR  "macrometrópole de são paulo"  OR  "São Paulo Macrometropolis"  OR  "Macrometropolis"  OR  "macrometropolização" 
+
+aproximadamente 1520 resultados (não são apenas artigos, mas teses também)
+Parei na página 9, não aparecia nada de novo
 
 
+OK - Depois: conferir com a tabela de 2019 se nao falta nenhum trabalho
+
+OK - Artigos com o título em inglês - verificar se tem disponível em português
+
+OK - Arrumar nomes das revistas/padronizar
+]
+
+coluna nova: trabalho é de pesquisadores do tematico
