@@ -6,7 +6,6 @@ output:
     reference_docx: template/modelo.docx
 bibliography: [referencias/packages.bib, referencias/zotero.bib]
 csl: template/apa.csl
-# submissão para Revista Brasileira de Recursos hídricos
 ---
 
 ```{r setup, include=FALSE}
@@ -39,18 +38,18 @@ base <- base_raw %>%
 ```
 
 
-# Levantamento exploratório de estudos sobre a Governança ambiental na Macrometrópole Paulista 
+# Levantamento de estudos sobre a Macrometrópole Paulista: 
 
-Beatriz Milz ^[Doutoranda no Programa de Pós-graduação em Ciência Ambiental (PROCAM), do Instituto de Energia e Ambiente (IEE) da Universidade de São Paulo (USP). Email: beatriz.milz@usp.br], Pedro Roberto Jacobi ^[....]
+Beatriz Milz ^[Doutoranda no Programa de Pós-graduação em Ciência Ambiental (PROCAM), do Instituto de Energia e Ambiente (IEE) da Universidade de São Paulo (USP). Email: beatriz.milz@usp.br . ORCID: https://orcid.org/0000-0002-3064-4486 ], Pedro Roberto Jacobi ^[Professor Titular Senior do Instituto de Energia e Ambiente da Universidade de São Paulo. E-mail: prjacobi@gmail.com ORCID: https://orcid.org/0000-0001-6143-3019 ]
 
 
 
-__Palavras-chave:__ Mudanças Climáticas, Governança da Água, Governança Metropolitana, Crise hídrica, Região Metropolitana de São Paulo.
+__Palavras-chave:__ Mudanças Climáticas, Governança da Água, Levantamento Bibliográfico, Região Metropolitana de São Paulo.
 
 
 ## Introdução
 
-A Macrometrópole Paulista (MMP) (Figura 1) é considerada a maior e mais importante aglomeração urbana do Brasil, e abrange as regiões metropolitanas de São Paulo, Campinas, Sorocaba, Baixada Santista, Vale do Paraíba e Litoral Norte, as aglomerações urbanas de Jundiaí e Piracicaba, e as microrregiões de Bragantina e São Roque [@emplasaPlanoAcaoMacrometropole2012; @daeeMacrometropoleSumarioExecutivo2013]. Segundo a Empresa Paulista de Planejamento Metropolitano (EMPLASA), a MMP é composta por 174 municípios e em 2018 concentrava uma população de 33,6 milhões de habitantes [@emplasaRegiaoMetropolitanaSao2019]. 
+A Macrometrópole Paulista (MMP) (Figura 1) é a maior aglomeração urbana do Brasil, e abrange as regiões metropolitanas de São Paulo, Campinas, Sorocaba, Baixada Santista, Vale do Paraíba e Litoral Norte, as aglomerações urbanas de Jundiaí e Piracicaba, e as microrregiões de Bragantina e São Roque [@emplasaPlanoAcaoMacrometropole2012; @daeeMacrometropoleSumarioExecutivo2013]. Segundo a Empresa Paulista de Planejamento Metropolitano (EMPLASA), a MMP é composta por 174 municípios e em 2018 concentrava uma população de 33,6 milhões de habitantes [@emplasaRegiaoMetropolitanaSao2019]. 
 
 
 
@@ -69,25 +68,32 @@ Segundo @pedrorobertojacobiCapitulo16Mudancas2018, “a governança ambiental do
 
 ## Metodologia
 
-As pesquisas foram realizadas em novembro de 2020, nas seguintes plataformas: Periódicos CAPES (http://www.periodicos.capes.gov.br/), *Scientific Electronic Library Online* (SciELO) (http://www.scielo.org/), *Scopus* (https://www.scopus.com/) e *Google Scholar* (https://scholar.google.com.br/). Foram pesquisados artigos que continham, em seu título,  algum dos seguintes termos: “Macrometrópole”, “Macrometrópole Paulista”, “Macrometrópole de São Paulo”, "Macrometropolização", “*Macrometropolis*” e “*Sao Paulo Macrometropolis*”.
+As pesquisas foram realizadas em novembro de 2020, nos seguintes repositórios: Periódicos CAPES (http://www.periodicos.capes.gov.br/), *Scientific Electronic Library Online* (SciELO) (http://www.scielo.org/), *Scopus* (https://www.scopus.com/) e *Google Scholar* (https://scholar.google.com.br/). Foram pesquisados artigos que continham, em seu título,  algum dos seguintes termos: “Macrometrópole”, “Macrometrópole Paulista”, “Macrometrópole de São Paulo”, "Macrometropolização", “*Macrometropolis*” e “*Sao Paulo Macrometropolis*”.
 
-Os resultados foram coletados e organizados em uma tabela, considerando os seguintes critérios: data da pesquisa, plataforma da pesquisa onde o trabalho foi encontrado, título da publicação, autoras(es), periódico científico na qual o trabalho foi publicado, idioma de publicação, ano de publicação e endereço online do trabalho (URL). Foram filtrados e apagados os trabalhos repetidos, considerando que existe a possibilidade de um mesmo trabalho ser indicado nos diferentes plataformas pesquisadas.
-<!-- Foram encontrados artigos que citavam a MMP em seu título, porém não tratava do tema no desenvolvimento do trabalho, portanto foram retirados deste estudo. -->
+Os resultados foram coletados e organizados em uma tabela, considerando os seguintes critérios: data da pesquisa, repositório onde o trabalho está indexado, título da publicação, autoras(es) do artigo, periódico científico na qual o trabalho foi publicado, idioma de publicação, ano de publicação e endereço online do trabalho (URL). Foram filtrados e apagados os trabalhos repetidos, considerando que existe a possibilidade de um mesmo trabalho ser indexado em mais de um repositório.
 
 
 A etapa posterior constou em verificar os trabalhos encontrados, com a finalidade de responder às seguintes perguntas:  Em que ano os artigos foram publicados? Em quais periódicos os mesmos foram publicados? De que forma o projeto temático MacroAmb tem contribuído para a produção de conhecimento sobre a Macrometrópole Paulista?
 
-Para a realização das diversas etapas da análise dos dados (como importação, limpeza, manipulação, visualização) foi utilizado os softwares R [@R-base], RStudio [@rstudio] e os seguintes pacotes: @R-tidyverse.
-<!-- A quais instituições pertencem os autores e co-autores dos artigos? -->
+Para a realização das diversas etapas da análise dos dados  [@wickhamR4DS2017; @silgeTextMining2017] (como importação, limpeza, manipulação, visualização) foi utilizado os softwares R [@R-base], RStudio [@rstudio] e os seguintes pacotes: `tidyverse` [@tidyverse2019], `tidytext` [@tidytext2016], `wordcloud2` [@R-wordcloud2] e `tm` [@tm2008].
 <!-- A governança é abordada nos trabalhos? Os autores relacionam a governança com quais abordagens (ex. ambiental, metropolitana, água, entre outros)? -->
 
-## Resultados e discussões (PRECISA ATUALIZAR)
+## Resultados e discussões 
 
 ```{r}
-artigos_ingles <- base %>% dplyr::filter(lang_en == TRUE, lang_pt == FALSE, lang_es == FALSE)
+artigos_ingles <-  base %>%  dplyr::filter(lang_en == TRUE, lang_pt == FALSE, lang_es == FALSE)
+
+
+artigos_portugues <- base %>%
+  dplyr::count(lang_pt) %>%
+  dplyr::mutate(porc = round(n / sum(n) * 100)) %>% 
+  dplyr::filter(lang_pt == TRUE) %>% 
+  dplyr::pull(porc)
 ```
 
-A pesquisa resultou em `r nrow(base)` artigos publicados em periódicos. Avaliando o idioma das publicações, apenas `r nrow(artigos_ingles)` trabalho foram publicados exclusivamente em língua inglesa, demonstrando que as pessoas autoras consideram que este assunto é de maior importância local (Brasil). Na Figura 2 está representado no gráfico o número de publicações por ano, e as revistas onde estes artigos foram publicados, evidenciando que os estudos sobre a MMP tem sido mais frequentes desde o ano 2015. 
+A pesquisa baseada nos critérios descritos anteriormente resultou em `r nrow(base)` artigos publicados em periódicos. Analisando o idioma das publicações, apenas `r nrow(artigos_ingles)` trabalho foram publicados exclusivamente em língua inglesa, enquanto `r artigos_portugues`% dos trabalhos foram publicados em português, demonstrando que as pessoas autoras consideram que este assunto é de maior importância local (Brasil). 
+
+Na Figura 2 está representado no gráfico o número de publicações por ano, e os periódicos onde estes artigos foram publicados, evidenciando que os estudos sobre a MMP tem sido mais frequentes desde o ano 2015. 
 
 
 ```{r fig.cap="Figura 2:  Quantidade de artigos científicos, segundo o ano de publicação. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 600}
@@ -103,14 +109,23 @@ base %>%
 
 Uma hipótese para o aumento de publicações desde o ano 2015 é a publicação do Plano de Ação da Macrometrópole Paulista 2013-2040 (PAM). O PAM foi coordenado pela EMPLASA e publicado em 2013, objetivou orientar a formulação e a execução de políticas públicas neste território. Segundo Tavares (2018, p. 128), “com a publicação do PAM, a Macrometrópole Paulista inseriu-se no sistema de planejamento regional do estado de São Paulo e se constituiu como uma região institucionalizada (porém não regulamentada por lei específica)”.
 
-> FALAR DO MACROAMB TAMBÉM
+
+```{r}
+porc_trabalhos_macroamb <- base %>%
+  dplyr::filter(year >= 2017) %>% 
+  dplyr::count(macroamb) %>% 
+  dplyr::mutate(porc = round(n/sum(n)*100, 1)) %>% 
+  dplyr::filter(macroamb == "VERDADEIRO") %>% 
+  dplyr::pull(porc)
+```
+Além disso, outra hipótese para o aumento de publicações nos últimos anos é a existência do Projeto MacroAmb: "Governança ambiental da macrometrópole paulista face à variabilidade climática", sendo um projeto financiado pela Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP), que foi iniciado em 2017. Considerando os trabalhos encontrados neste levantamento, e publicados a partir de 2017 (o período de início do projeto), `r porc_trabalhos_macroamb`% dos trabalhos foram realizados com autoria ou co-autoria de pessoas pesquisadoras pertencentes ao Projeto MacroAmb.
 
 
-Na Figura 3 estão representados as revistas onde foram identificados o maior número de artigos publicados relacionados com o tema da MMP, sendo elas: Cadernos Metrópole, Ambiente & Sociedade, Revista Brasileira de Estudos Urbanos Regionais e Revista IberoAmericana de Urbanismo (RIURB).  
+Na Figura 3 estão representados os periódicos onde foram identificados o maior número de artigos publicados relacionados com o tema da MMP, sendo elas: Cadernos Metrópole, Ambiente & Sociedade, Revista Brasileira de Estudos Urbanos Regionais e Revista IberoAmericana de Urbanismo (RIURB).  
 
 
 
-```{r fig.cap="Figura 3:  Quantidade de artigos científicos, segundo a revista em que foi publicado. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 600 }
+```{r fig.cap="Figura 3:  Quantidade de artigos científicos, segundo o periódico em que foi publicado. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 600 }
 
 base %>%
   dplyr::mutate(revista_factor = forcats::fct_lump_min(revista, 2, other_level = "Outras"),
@@ -125,32 +140,21 @@ base %>%
  # geom_text(aes(y = revista_factor, x = n , label = n), hjust = 2) +
   theme_bw() +
   
-  labs(y = "Revista Científica", x = "Número de artigos")
+  labs(y = "Periódico", x = "Número de artigos")
 ```
 
+A Figura 4 apresenta uma nuvem de frequência de palavras, elaborada a partir dos títulos dos artigos encontrados neste levantamento, e foi desenvolvida com a finalidade de apresentar de forma visual os temas abordados pelos trabalhos. Para a melhor visualização da nuvem, as palavras "Macrometrópole" e "Paulista", por serem palavras comuns na maioria dos títulos dos trabalhos. Não houve destaque para palavras relacionadas com mudanças climáticas nas nuvens de frequência de palavras, sendo que a palavra com maior frequência foi "planejamento", enquanto a palavra governança aparece com pouco destaque. 
 
 
-
-
-
-A Figura 4 apresenta nuvens de frequência de palavras, elaboradas a partir dos títulos de todas as publicações apresentadas neste estudo, e das palavras-chaves utilizadas pelas pessoas autoras, desenvolvidas com a finalidade de apresentar de forma visual os temas abordados pelos trabalhos. Não há destaque para palavras relacionadas com mudanças climáticas nas nuvens de frequência de palavras, enquanto a palavra governança aparece apenas na nuvem de palavras-chaves dos artigos, com pouco destaque. 
-
-
-```{r}
+```{r fig.cap="Figura 4: Nuvem de frequência de palavras, elaborada a partir do título das publicações apresentadas neste estudo. Fonte: Elaborado pelas pessoas autoras."}
 knitr::include_graphics("imagens/nuvem_titulos.png")
   
 ```
 
 
-Figura 3: Nuvem de frequência de palavras, elaborada a partir de a) título das publicações apresentadas neste estudo, b) palavras-chaves indicadas nas publicações.     
+### Governança e a Macrometrópole Paulista **ATUALIZAR**
 
-__ATUALIZAR FIGURA__
-
-Fonte: Elaborado pelas pessoas autoras.
-
-### Governança e a Macrometrópole Paulista
-
-Considerando os artigos apresentados neste levantamento, foram identificados 6 trabalhos que abordavam a governança. As abordagens que apareceram relacionadas com governança são: água, metropolitana, participativa, ambiental, interfederativa, multinível, multissetorial, nexo e democrática.
+Considerando os artigos apresentados neste levantamento, foram identificados XXXX trabalhos que abordavam a governança. As abordagens que apareceram relacionadas com governança são: água, metropolitana, participativa, ambiental, interfederativa, multinível, multissetorial, nexo e democrática.
 
 
 As abordagens de governança mais presentes nos estudos foram a governança da água e governança metropolitana. Dentre os trabalhos que abordaram a governança da água na MMP (JACOBI, CIBIM & LEÃO, 2015; GIATTI et al., 2016; RICHTER & JACOBI, 2018), dois trataram diretamente sobre a crise hídrica que afetou a Macrometrópole Paulista entre 2014 e 2015, especialmente a Região Metropolitana de São Paulo (RMSP), e outro apresentou este acontecimento em sua contextualização. A gestão dos recursos hídricos atualmente transcende a escala da RMSP, pois apresenta complexas relações com outras regiões metropolitanas e unidades de gerenciamento de recursos hídricos, que estão incluídas no território da Macrometrópole Paulista. Segundo Richter e Jacobi (2018, p. 557):
@@ -165,16 +169,16 @@ Por outro lado, os trabalhos que consideraram a abordagem da governança metropo
 
 ## Conclusões
 
-Desde 2015, houve um aumento do número de publicações científicas que tratavam do território da Macrometrópole Paulista. Destacando a importância da governança ambiental para o contexto apresentado, é importante que as pesquisas sobre este território sejam intensificadas, especialmente no contexto atual de incertezas e mudanças climáticas, com o intuito de avançar no entendimento sobre a governança ambiental na MMP. Espera-se que esse levantamento exploratório forneça subsídios para pesquisas futuras sobre a Macrometrópole.
+Desde 2015, houve um aumento do número de publicações científicas que tratavam do território da Macrometrópole Paulista. Destacando a importância da governança ambiental para o contexto apresentado, é importante que as pesquisas sobre este território sejam intensificadas, especialmente no contexto atual de incertezas e mudanças climáticas, com o intuito de avançar no entendimento sobre a governança ambiental na MMP. Espera-se que esse levantamento exploratório forneça subsídios para pesquisas futuras sobre a Macrometrópole Paulista.
 
 ## Agradecimentos
 
-Os(as) autores(as) agradecem o apoio da Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP) (processos n.[número da bolsa]). O trabalho é parte das atividades do projeto temático, em andamento, “Governança ambiental na Macrometrópole Paulista, face à variabilidade climática”, processo nº 15/03804-9, financiado pela FAPESP e vinculado ao Programa FAPESP de Pesquisa sobre Mudanças Climáticas Globais.
+Os(as) autores(as) agradecem o apoio da Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP) (processo n.	2018/23771-6). O trabalho é parte das atividades do projeto temático, em andamento, “Governança ambiental na Macrometrópole Paulista, face à variabilidade climática”, processo nº 15/03804-9, financiado pela FAPESP e vinculado ao Programa FAPESP de Pesquisa sobre Mudanças Climáticas Globais.
 
 ## Referências
 
 ```{r echo=FALSE}
-knitr::write_bib(c('knitr', 'rmarkdown', "ggplot2", "dplyr", "readr", "lubridate", "forcats", "tidyverse"), 'referencias/packages.bib')
+knitr::write_bib(c('knitr', 'rmarkdown', "ggplot2", "dplyr", "readr", "lubridate", "forcats", "tidyverse", "tidytext", "tm", "wordcloud2"), 'referencias/packages.bib')
 ```
 
 <!-- This '<div id="refs"></div>' needs to 

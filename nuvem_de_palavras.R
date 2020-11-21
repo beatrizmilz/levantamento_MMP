@@ -1,6 +1,5 @@
 library(tm)
-library(wordcloud)
-
+library(wordcloud2)
 library(tidytext)
 
 
@@ -9,7 +8,9 @@ library(tidytext)
 # 
 # base_raw <- googlesheets4::read_sheet(url)
 
-stop_words_pt <-  tibble::tibble(word = tm::stopwords("pt"))
+stop_words_pt <-  tibble::tibble(word = tm::stopwords("pt")) %>% 
+  tibble::add_row(word = "macrometrópole") %>% 
+  tibble::add_row(word = "paulista")
 
 
 palavras <- base_raw %>% 
@@ -17,22 +18,19 @@ palavras <- base_raw %>%
   tidytext::unnest_tokens(word, titulo) %>% 
   dplyr::anti_join(stop_words_pt) %>% 
   dplyr::count(word, sort = TRUE) %>% 
-  tibble::as_tibble()
+  tibble::as_tibble() 
 
 
+contorno_mmp <- "imagens/contorno_mmp.png"
+nuvem <- wordcloud2::wordcloud2(palavras, figPath = contorno_mmp, size = 0.7 )
+nuvem
+# Tive que tirar print da nuvem no IE. O pacote tá com algum bug no figPath!
 
 
-
-
-nuvem <- wordcloud2::wordcloud2(palavras, figPath = ...)
-
-# USAR O CONTORNO DA MMP!
-
-
-library(webshot)
-#webshot::install_phantomjs()
-# save it in html
-library("htmlwidgets")
-saveWidget(nuvem,"tmp.html",selfcontained = F)
-# and in png
-webshot("tmp.html","imagens/nuvem_titulos.png", delay =5, vwidth = 1000, vheight=1000) # changed to png. 
+# library(webshot)
+# #webshot::install_phantomjs()
+# # save it in html
+# library("htmlwidgets")
+# saveWidget(nuvem,"tmp.html",selfcontained = F)
+# # and in png
+# webshot("tmp.html","imagens/nuvem_titulos_webshot.png", delay =5, vwidth = 1000, vheight=1000) # changed to png. 
