@@ -188,7 +188,7 @@ referencias_gov_agua  <- base %>% dplyr::filter(aborda_governanca == TRUE) %>%
   knitr::combine_words(sep = "; ", and = "")
 ```
 
- Dentre os artigos que citaram a governança da água na MMP [`r referencias_gov_agua`], dois trataram diretamente sobre a crise hídrica que afetou a Macrometrópole Paulista entre 2014 e 2015, especialmente a Região Metropolitana de São Paulo (RMSP), e outro apresentou este acontecimento em sua contextualização. A gestão dos recursos hídricos atualmente transcende a escala da RMSP, pois apresenta complexas relações com outras regiões metropolitanas e unidades de gerenciamento de recursos hídricos, que estão incluídas no território da Macrometrópole Paulista. Segundo @richterConflitosNaMacrometropole2018 (p. 557):
+Dentre os artigos que citaram a governança da água na MMP [`r referencias_gov_agua`], dois trataram diretamente sobre a crise hídrica que afetou a Macrometrópole Paulista entre 2014 e 2015, especialmente a Região Metropolitana de São Paulo (RMSP), e outro apresentou este acontecimento em sua contextualização. A gestão dos recursos hídricos atualmente transcende a escala da RMSP, pois apresenta complexas relações com outras regiões metropolitanas e unidades de gerenciamento de recursos hídricos, que estão incluídas no território da Macrometrópole Paulista. Segundo @richterConflitosNaMacrometropole2018 (p. 557):
 
 > “num contexto de conflitos e disputas pelo uso da água proveniente das bacias hidrográficas que abastecem a região, torna-se importante pensar o desafio que a MMP apresenta enquanto território para a segurança hídrica e integração de seus recursos diante da disponibilidade e demanda em seus múltiplos usos”.
 
