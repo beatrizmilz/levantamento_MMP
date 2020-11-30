@@ -1,0 +1,52 @@
+---
+title: "Feedback por Pedro Torres, baseado na versão enviada no dia 21/11/2020."
+author: "Beatriz Milz"
+date: "24/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+- Como na figura 3 o "outros" é muito grande, eu colocaria uma nota de rodapé no parágrafo que vc menciona ela, e colocaria quais revistas são.
+   
+> Coloquei uma nota de rodapé!  
+
+- O levantamento está muito bom. Mas se ficar até 2018 não vão entrar os trabalhos do MacroAmb. Vai dar muito trabalho ir até 2020? Pq uma das suas hipóteses para o aumento dos artigos é a existência do MacroAmb, mas recortando em 2018 não da pra checar essa hipótese. Algumas horas no texto da entender que é até 2018, outros que vai até 2020 (Figura 1, por exemplo). Precisa uniformizar isso. Seria excelente deixando até 2020. A sua hipótese do MacroAmb vai se concretizar com certeza.
+
+> É 2020 sim! Eu havia esquecido de atualizar isso no texto, agora atualizei. Obrigada por reparar isso! 
+
+
+- O primeiro parágrafo da introdução cita a microrregião de São Roque com "DAEE, 2013; EMPLASA, 2012" e no fim do parágrafo cita EMPLASA 2019. Tem um conflito aí. Microrregião de São Roque já não está em 2019. Então eu retiraria essa  "DAEE, 2013; EMPLASA, 2012" e deixaria apenas a mais atual. 
+
+> Alterei para o que consta no site da Emplasa: https://emplasa.sp.gov.br/MMP
+
+
+- O Mapa 1 eu trocaria por algum mapa feito pelo MacroAmb. A Bruna e o Rodolfo tem versões disponíveis mostrando os 174 municípios e as regiões, aglomerações, microrregiões.
+
+> Usei um mapa enviado pela Bruna
+
+
+- "Considerando os artigos encontrados neste levantamento, 41.4% dos artigos encontrados e publicados a partir de 2017 (o período de início do projeto) foram realizados com autoria ou co-autoria de pessoas pesquisadoras pertencentes ao Projeto MacroAmb." A Figura 3 não fala dessa informação anterior então pensei que talvez alguma figura sobre essa informação seria bacana. Quais autores, quais temas, quais revistas? E sobre essa informação de 41.4% seria importante deixar claro quantos % são antes do projeto começar. 
+
+> Adicionei um gráfico, uma tabela, e um pequeno texto sobre isso
+> Os 41.4% são após o inicio do projeto  (estava no texto: "publicados a partir de 2017")
+
+- A Figura 4 ficou bem bacana. Será que vale explicar que em "Paulo" estão contido "São Paulo" ou é óbvio? 
+
+> Adicionei um comentário pequeno sobre isso.
+
+
+- Esse resultado "Não houve destaque para palavras relacionadas com mudanças climáticas nas nuvens de frequência de palavras, sendo que a palavra com maior frequência foi “planejamento”, enquanto a palavra governança aparece com menor destaque." é muito importante pois afasta uma possível explicação de que os trabalhos pudessem ter aumentado por conta da crise hídrica, por exemplo.  
+
+> Não alterei pois é comentário
+
+- A informação da conclusão de que "Desde 2015, houve um aumento do número de publicações científicas que tratavam do território da Macrometrópole Paulista." poderia ser mais assertiva na mesma frase. Algo como "Se até 2015 haviam sido publicados X publicações científicas que tratavam do território da Macrometrópole Paulista, a partir desse ano houve um aumento exponencial com pico considerável a partir de 2019 e, principalmente, 2020".  
+
+> Alterei a conclusão, o que acha? Não quis comentar exponencial, mas disse que foi um grande crescimento.
+
+
+- Muito, muito importante, o resultado de que a maioria dos artigos focam em gestão metropolitana, mas os que tocam em gestão metropolitana não tocam em mudanças climáticas. Fiquei pensando também se além de mudanças climáticas eles versam sobre alguma questão ambiental? Vale a pena trazer essa informação novamente para conclusão.
+
+> Alterei (pouco) essa seção. Tentei melhorar isso na conclusão, o que acha?
