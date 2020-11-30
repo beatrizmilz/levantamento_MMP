@@ -16,6 +16,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Foram pesquisados artigos que continham, em seu título, os seguintes termos: “Macrometrópole”, “Macrometrópole Paulista”, “Macrometrópole de São Paulo”, macrometropolização, “*Macrometropolis*” e “*Sao Paulo Macrometropolis*”.
 
+Macro Metropolis
+
+
+
+futuro: Paulista Macro Metropolis , MACRO-METROPOLIS
 
 ### *Scientific Electronic Library Online* (SciELO) (http://www.scielo.org/)
 13/11/2020
@@ -25,6 +30,9 @@ Todos os índices
 Exportar: Formato CSV, todos os registros
 
 Dados: Título, Autores, Jornal, Idioma, Ano de publicacao, URL
+
+
+30/11/2020 - Macro Metropolis - Nada novo
 
 ```{r}
 pesquisa_scielo_13_11_2020 <- readr::read_csv("dados/pesquisa_scielo_13-11-2020_2.csv")
@@ -50,6 +58,7 @@ OK - Busca 4: No título: paulista macrometropolis : 1 resultados
 
 OK - Busca 5: No título: macrometropolização : 0 resultados
 
+30/11/2020 - São Paulo Macro Metropolis 
 
 ### Scopus
 
@@ -59,6 +68,8 @@ Query:
 TITLE ( "macrometrópole"  OR  "macrometrópole paulista"  OR  "macrometrópole de são paulo"  OR  "São Paulo Macrometropolis"  OR  "Macrometropolis"  OR  "macrometropolização" )  
 15 resultados
 
+
+30/11/2020 - São Paulo Macro Metropolis 
 
 ```{r}
 # scopus_file <- "dados/scopus-20-11-2020.bib"

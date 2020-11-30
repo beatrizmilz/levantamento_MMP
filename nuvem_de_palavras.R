@@ -10,6 +10,8 @@ library(tidytext)
 
 stop_words_pt <-  tibble::tibble(word = tm::stopwords("pt")) %>% 
   tibble::add_row(word = "macrometrópole") %>% 
+  tibble::add_row(word = "paulo") %>% 
+  tibble::add_row(word = tm::stopwords("en")) %>% 
   tibble::add_row(word = "paulista")
 
 
@@ -22,7 +24,7 @@ palavras <- base_raw %>%
 
 
 contorno_mmp <- "imagens/contorno_mmp.png"
-nuvem <- wordcloud2::wordcloud2(palavras, figPath = contorno_mmp, size = 0.7 )
+nuvem <- wordcloud2::wordcloud2(palavras, figPath = contorno_mmp, size = 0.5 )
 nuvem
 # Tive que tirar print da nuvem no IE. O pacote tá com algum bug no figPath!
 

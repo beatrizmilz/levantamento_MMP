@@ -24,9 +24,9 @@ library(ggplot2)
 # 
 # base_raw <- googlesheets4::read_sheet(url)
 # 
-# write.csv2(base_raw, file = "dados/base_2020_googlesheets.csv")
+# readr::write_rds(base_raw, file = "dados/base_2020_googlesheets.rds")
 
-base_raw <- read.csv2("dados/base_2020_googlesheets.csv")
+base_raw <- readr::read_rds("dados/base_2020_googlesheets.rds")
 
 base <- base_raw %>% 
     dplyr::mutate(
@@ -68,7 +68,7 @@ Segundo @pedrorobertojacobiCapitulo16Mudancas2018, “a governança ambiental do
 
 ## Metodologia
 
-As pesquisas foram realizadas em novembro de 2020, nos seguintes repositórios: Periódicos CAPES (http://www.periodicos.capes.gov.br/), *Scientific Electronic Library Online* (SciELO) (http://www.scielo.org/), *Scopus* (https://www.scopus.com/) e *Google Scholar* (https://scholar.google.com.br/). Foram pesquisados artigos que continham, em seu título,  algum dos seguintes termos: “Macrometrópole”, “Macrometrópole Paulista”, “Macrometrópole de São Paulo”, "Macrometropolização", “*Macrometropolis*” e “*Sao Paulo Macrometropolis*”.
+As pesquisas foram realizadas em novembro de 2020, nos seguintes repositórios: Periódicos CAPES (http://www.periodicos.capes.gov.br/), *Scientific Electronic Library Online* (SciELO) (http://www.scielo.org/), *Scopus* (https://www.scopus.com/) e *Google Scholar* (https://scholar.google.com.br/). Foram pesquisados artigos que continham, em seu título,  algum dos seguintes termos: “Macrometrópole”, “Macrometrópole Paulista”, “Macrometrópole de São Paulo”, "Macrometropolização", “*Macrometropolis*”, “*Macro Metropolis*” e “*Sao Paulo Macrometropolis*”.
 
 Os resultados foram coletados e organizados em uma tabela, considerando os seguintes critérios: data da pesquisa, repositório onde o trabalho está indexado, título da publicação, autoras(es) do artigo, periódico científico na qual o trabalho foi publicado, idioma de publicação, ano de publicação e endereço online do trabalho (URL). Foram filtrados e apagados os artigos repetidos, considerando que existe a possibilidade de um mesmo trabalho ser indexado em mais de um repositório.
 
@@ -91,7 +91,7 @@ artigos_portugues <- base %>%
   dplyr::pull(porc)
 ```
 
-A pesquisa baseada nos critérios descritos anteriormente resultou em `r nrow(base)` artigos publicados em periódicos. Analisando o idioma das publicações, apenas `r nrow(artigos_ingles)` trabalho foram publicados exclusivamente em língua inglesa, enquanto `r artigos_portugues`% dos artigos foram publicados em português, demonstrando que as pessoas autoras consideram que este assunto é de maior importância local (Brasil). 
+A pesquisa baseada nos critérios descritos anteriormente resultou em `r nrow(base)` artigos publicados em periódicos. Analisando o idioma das publicações, apenas `r nrow(artigos_ingles)` trabalho foram publicados exclusivamente em língua inglesa, enquanto `r artigos_portugues`% dos artigos foram publicados em português (podendo ter sido publicado também em inglês e/ou espanhol), demonstrando que as pessoas autoras consideram que este assunto é de maior importância local (Brasil). 
 
 Na Figura 2 está representado no gráfico o número de publicações por ano, e os periódicos onde estes artigos foram publicados, evidenciando que os estudos sobre a MMP tem sido mais frequentes desde o ano 2015. 
 
@@ -149,6 +149,7 @@ base %>%
   dplyr::group_by(revista) %>%
   dplyr::summarise(n = dplyr::n(),
                    referencias = knitr::combine_words(bibtex, sep = "; ", and = "")) %>%
+  dplyr::arrange(desc(n)) %>% 
   knitr::kable(col.names = c("Periódico",
                "Número de trabalhos",
                "Referência dos trabalhos"))
@@ -190,11 +191,11 @@ base %>%
 
 
 
-A Figura 5 apresenta uma nuvem de frequência de palavras, elaborada a partir dos títulos dos artigos encontrados neste levantamento, e foi desenvolvida com a finalidade de apresentar de forma visual os temas abordados pelos artigos. Para a melhor visualização da nuvem, as palavras "Macrometrópole" e "Paulista", por serem palavras comuns na maioria dos títulos dos artigos. Não houve destaque para palavras relacionadas com mudanças climáticas nas nuvens de frequência de palavras, sendo que a palavra com maior frequência foi "planejamento", enquanto a palavra governança aparece com menor destaque. A palavra "Paulo" aparece com frequência pois está contida em "São Paulo". 
+A Figura 5 apresenta uma nuvem de frequência de palavras, elaborada a partir dos títulos dos artigos encontrados neste levantamento, e foi desenvolvida com a finalidade de apresentar de forma visual os temas abordados pelos artigos. Para a melhor visualização da nuvem, as palavras "Macrometrópole", "Paulista" e "Paulo", por serem palavras comuns na maioria dos títulos dos artigos. Não houve destaque para palavras relacionadas com mudanças climáticas nas nuvens de frequência de palavras, sendo que a palavra com maior frequência foi "planejamento", enquanto a palavra governança aparece com menor destaque. 
 
 
 ```{r fig.cap="Figura 5: Nuvem de frequência de palavras, elaborada a partir do título das publicações apresentadas neste estudo. Fonte: Elaborado pelas pessoas autoras." , dpi = 1200}
-knitr::include_graphics("imagens/nuvem_titulos.png")
+knitr::include_graphics("imagens/nuvem_titulo_2.png")
   
 ```
 
@@ -204,10 +205,10 @@ knitr::include_graphics("imagens/nuvem_titulos.png")
 
 ```{r}
 artigos_citam_governanca <-
-  base %>% dplyr::count(aborda_governanca) %>% dplyr::filter(aborda_governanca == TRUE) %>% dplyr::pull(n)
+  base %>% dplyr::count(aborda_governanca) %>% dplyr::filter(aborda_governanca == "T") %>% dplyr::pull(n)
 
 
-texto_governanca <- base %>% dplyr::filter(aborda_governanca == TRUE) %>% dplyr::select(governanca_e) %>% 
+texto_governanca <- base %>% dplyr::filter(aborda_governanca == "T") %>% dplyr::select(governanca_e) %>% 
   dplyr::filter(!governanca_e %in% c("apenas governança", "não está claro")) %>% 
   tidyr::separate(governanca_e, into = c("governanca_1", "governanca_2" , "governanca_3" , "governanca_4", "governanca_5"),sep = ",") %>% 
   tidyr::pivot_longer(cols = tidyselect::everything()) %>% 
@@ -228,7 +229,7 @@ texto_governanca <- base %>% dplyr::filter(aborda_governanca == TRUE) %>% dplyr:
 Considerando os artigos apresentados neste levantamento, foram identificados `r artigos_citam_governanca` artigos que citam a governança. As abordagens que apareceram com mais frequência citadas com governança são: `r texto_governanca`.
 
 ```{r}
-referencias_gov_agua  <- base %>% dplyr::filter(aborda_governanca == TRUE) %>% 
+referencias_gov_agua  <- base %>% dplyr::filter(aborda_governanca == "T") %>% 
   dplyr::filter(stringr::str_detect(governanca_e, "água")) %>% 
   dplyr::arrange(year) %>% 
   dplyr::pull(bibtex) %>% 
@@ -243,7 +244,7 @@ Dentre os artigos que citaram a governança da água na MMP [`r referencias_gov_
 Os artigos que consideraram a abordagem de governança da água também dialogaram sobre as mudanças climáticas, que é uma questão que aumenta as incertezas sobre o abastecimento público da MMP. Segundo o IPCC, as mudanças climáticas irão aumentar os riscos de ocorrência de eventos de secas e escassez de água [@ipcc_climate_2014]. 
 
 ```{r include=FALSE}
-referencias_gov_metropolitana  <- base %>% dplyr::filter(aborda_governanca == TRUE) %>% 
+referencias_gov_metropolitana  <- base %>% dplyr::filter(aborda_governanca == "T") %>% 
   dplyr::filter(stringr::str_detect(governanca_e, "metropolitana")) %>% 
   dplyr::arrange(year) %>% 
   dplyr::pull(bibtex) %>% 
