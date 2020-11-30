@@ -53,7 +53,7 @@ A Macrometrópole Paulista (MMP) (Figura 1) é a maior aglomeração urbana do B
 
 
 
-```{r mapaemplasa, fig.cap="Figura 1: Mapa da Macrometrópole Paulista, localizada no Estado de São Paulo, Brasil. \\linebreak Fonte: Elaboração por Bruna S. Fernandes - LaPlan/UFABC, 2019."}
+```{r mapaemplasa, fig.cap="Figura 1: Mapa da Macrometrópole Paulista, localizada no Estado de São Paulo, Brasil. \\linebreak Fonte: Elaboração por Bruna S. Fernandes - LaPlan/UFABC, 2019.", dpi = 1200}
 knitr::include_graphics("imagens/mmp_labplan.png")
 ```
 
@@ -96,7 +96,7 @@ A pesquisa baseada nos critérios descritos anteriormente resultou em `r nrow(ba
 Na Figura 2 está representado no gráfico o número de publicações por ano, e os periódicos onde estes artigos foram publicados, evidenciando que os estudos sobre a MMP tem sido mais frequentes desde o ano 2015. 
 
 
-```{r fig.cap="Figura 2:  Quantidade de artigos científicos, segundo o ano de publicação. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 600}
+```{r fig.cap="Figura 2:  Quantidade de artigos científicos, segundo o ano de publicação. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 1200}
 base %>% 
   dplyr::count(ano) %>% 
   ggplot() + 
@@ -123,10 +123,10 @@ porc_trabalhos_macroamb <- base %>%
 
 
 
-Além disso, outra hipótese para o aumento de publicações nos últimos anos é a existência do Projeto MacroAmb: "Governança ambiental da macrometrópole paulista face à variabilidade climática", sendo um projeto financiado pela Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP), que foi iniciado em 2017. Considerando os artigos encontrados neste levantamento, `r porc_trabalhos_macroamb`% dos artigos encontrados  e publicados a partir de 2017 (o período de início do projeto) foram realizados com autoria ou co-autoria de pessoas pesquisadoras pertencentes ao Projeto MacroAmb. No gráfico apresentado a seguir (Figura 3), é possível verificar que desde o ano de 2018 o número de artigos publicados com autoria e co-autoria de pessoas participantes do Projeto Macroamb vem aumentando. Nesse gráfico, destaca-se também o o ano de 2020 (incompleto, pois a coleta de dados foi realizada em novembro de 2020), onde a maioria das publicações encontradas são derivadas do Projeto Macroamb. A Tabela
+Além disso, outra hipótese para o aumento de publicações nos últimos anos é a existência do Projeto MacroAmb: "Governança ambiental da macrometrópole paulista face à variabilidade climática", sendo um projeto financiado pela Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP), que foi iniciado em 2017. Considerando os artigos encontrados neste levantamento, `r porc_trabalhos_macroamb`% dos artigos encontrados  e publicados a partir de 2017 (o período de início do projeto) foram realizados com autoria ou co-autoria de pessoas pesquisadoras pertencentes ao Projeto MacroAmb. No gráfico apresentado a seguir (Figura 3), é possível verificar que desde o ano de 2018 o número de artigos publicados com autoria e co-autoria de pessoas pesquisadoras do Projeto Macroamb vem aumentando. Nesse gráfico, destaca-se também o o ano de 2020 (incompleto, pois a coleta de dados foi realizada em novembro de 2020), onde a maioria das publicações encontradas são derivadas do Projeto Macroamb. A Tabela 1 apresenta as referências dessas publicações, assim como a quantidade de artigos científicos publicados por pessoas pesquisadoras do Projeto Macroamb, segundo o periódico onde o artigo foi publicado.
 
 
-```{r fig.cap="Figura 3:  Quantidade de artigos científicos, segundo o ano de publicação, e se as pessoas autoras fazem parte ou não da equipe de pesquisadoras do Projeto Macroamb. A linha verde pontilhada representa o início do projeto.  \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 600}
+```{r fig.cap="Figura 3:  Quantidade de artigos científicos, segundo o ano de publicação, e se as pessoas autoras fazem parte ou não da equipe de pesquisadoras do Projeto Macroamb. A linha verde pontilhada representa o início do projeto.  \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 1200}
 base %>%
   dplyr::group_by(ano, macroamb) %>%
   dplyr::summarise(n = dplyr::n()) %>%
@@ -169,7 +169,7 @@ Na Figura 4 estão representados os periódicos onde foram identificados o maior
 
 
 
-```{r fig.cap="Figura 4:  Quantidade de artigos científicos, segundo o periódico em que foi publicado. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 600 }
+```{r fig.cap="Figura 4:  Quantidade de artigos científicos, segundo o periódico em que foi publicado. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 1200}
 
 base %>%
   dplyr::mutate(revista_factor = forcats::fct_lump_min(revista, 2, other_level = "Outros"),
@@ -193,7 +193,7 @@ base %>%
 A Figura 5 apresenta uma nuvem de frequência de palavras, elaborada a partir dos títulos dos artigos encontrados neste levantamento, e foi desenvolvida com a finalidade de apresentar de forma visual os temas abordados pelos artigos. Para a melhor visualização da nuvem, as palavras "Macrometrópole" e "Paulista", por serem palavras comuns na maioria dos títulos dos artigos. Não houve destaque para palavras relacionadas com mudanças climáticas nas nuvens de frequência de palavras, sendo que a palavra com maior frequência foi "planejamento", enquanto a palavra governança aparece com menor destaque. A palavra "Paulo" aparece com frequência pois está contida em "São Paulo". 
 
 
-```{r fig.cap="Figura 5: Nuvem de frequência de palavras, elaborada a partir do título das publicações apresentadas neste estudo. Fonte: Elaborado pelas pessoas autoras."}
+```{r fig.cap="Figura 5: Nuvem de frequência de palavras, elaborada a partir do título das publicações apresentadas neste estudo. Fonte: Elaborado pelas pessoas autoras." , dpi = 1200}
 knitr::include_graphics("imagens/nuvem_titulos.png")
   
 ```
@@ -261,9 +261,9 @@ n_publicacoes_anteriores_a_2017 <- base %>% dplyr::filter(year < 2017) %>% dplyr
 ```
 
 
-Considerando as publicações encontradas neste levantamento, até 2017 haviam sido publicados `r n_publicacoes_anteriores_a_2017` publicações científicas que tratavam do território da Macrometrópole Paulista. A partir do ano de 2017 houve um importante aumento no número de publicações, atingindo o maior valor em 2020, o que é evidenciado na Figura 3. Esse período de aumento de publicações sobre a Macrometrópole Paulista coincide com o período de existência do Projeto Macroamb, o que destaca a importância deste projeto para a produção de conhecimento sobre este território.
+Considerando as publicações encontradas neste levantamento, até 2017 haviam sido publicados `r n_publicacoes_anteriores_a_2017` artigos científicos que tratavam do território da Macrometrópole Paulista. A partir do ano de 2017 houve um importante aumento no número de publicações, atingindo o maior valor em 2020, o que é evidenciado na Figura 3. Esse período de aumento de publicações sobre a Macrometrópole Paulista coincide com o período de existência do Projeto Macroamb, o que destaca a relevância deste projeto para a produção de conhecimento sobre este território.
 
-Além disso, destaca-se a importância das mudanças climáticas para o contexto apresentado, sendo importante que as pesquisas sobre este território sejam intensificadas e, especialmente no contexto atual de incertezas, que as pesquisas considerem as mudanças climáticas. Estes estudos serão de grande importânca para o avanço no entendimento sobre a governança ambiental na MMP. Espera-se que esse levantamento forneça subsídios para pesquisas futuras sobre a Macrometrópole Paulista.
+Além disso, destaca-se a importância das mudanças climáticas para o contexto apresentado, e cabe enfatizar a relevância das pesquisas sobre o tema neste território e que demandam intensificação, principalmente no contexto atual de incertezas. Estes estudos serão de grande importância para o avanço no entendimento sobre o papel da governança ambiental na MMP. Espera-se que esse levantamento forneça subsídios para pesquisas futuras sobre a Macrometrópole Paulista.
 
 ## Agradecimentos
 
