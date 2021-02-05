@@ -96,7 +96,7 @@ A pesquisa baseada nos critérios descritos anteriormente resultou em `r nrow(ba
 Na Figura 2 está representado no gráfico o número de publicações por ano, e os periódicos onde estes artigos foram publicados, evidenciando que os estudos sobre a MMP tem sido mais frequentes desde o ano 2015. 
 
 
-```{r fig.cap="Figura 2:  Quantidade de artigos científicos, segundo o ano de publicação. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 1200}
+```{r grafico-artigos-ano, fig.cap="Figura 2:  Quantidade de artigos científicos, segundo o ano de publicação. \\linebreak Fonte: Elaborado pelas pessoas autoras.", out.width="100%", dpi = 1200}
 base %>% 
   dplyr::count(ano) %>% 
   ggplot() + 
@@ -105,7 +105,8 @@ base %>%
   theme_bw() +
   scale_x_date(date_labels = "%Y", date_breaks = "1 year") +
   scale_y_continuous(breaks = seq(0, 100, by = 2)) +
-  labs(x = "Ano", y = "Número de artigos")
+  labs(x = "Ano", y = "Número de artigos") +
+  ggsave("imagens/grafico_artigos_por_ano.png", dpi = 600, height = 3)
 ```
 
 Uma hipótese para o aumento de publicações desde o ano 2015 é a publicação do Plano de Ação da Macrometrópole Paulista 2013-2040 (PAM). O PAM foi coordenado pela EMPLASA e publicado em 2013, objetivou orientar a formulação e a execução de políticas públicas neste território. Segundo Tavares (2018, p. 128), “com a publicação do PAM, a Macrometrópole Paulista inseriu-se no sistema de planejamento regional do estado de São Paulo e se constituiu como uma região institucionalizada (porém não regulamentada por lei específica)”.
@@ -141,18 +142,22 @@ base %>%
   scale_x_date(date_labels = "%Y", date_breaks = "1 year") +
   scale_y_continuous(breaks = seq(0, 100, by = 2)) +
   labs(x = "Ano", y = "Número de artigos", fill = "Pesquisadoras(es) do Projeto MacroAmb") +
-  theme(legend.position="bottom")
+  theme(legend.position="bottom")+
+  ggsave("imagens/grafico_artigos_por_ano_macroamb.png", dpi = 600, height = 4)
 ```
 ```{r echo=FALSE, fig.cap="Tabela 1:  Quantidade de artigos científicos publicados por pessoas pesquisadoras do Projeto Macroamb, segundo o periódico de publicação. \\linebreak Fonte: Elaborado pelas pessoas autoras."}
-base %>%
+tabela_macroamb <- base %>%
   dplyr::filter(macroamb == "VERDADEIRO") %>%
   dplyr::group_by(revista) %>%
   dplyr::summarise(n = dplyr::n(),
                    referencias = knitr::combine_words(bibtex, sep = "; ", and = "")) %>%
-  dplyr::arrange(desc(n)) %>% 
+  dplyr::arrange(desc(n))
+
+tabela_macroamb %>% 
   knitr::kable(col.names = c("Periódico",
                "Número de trabalhos",
                "Referência dos trabalhos"))
+
 
 ```
 
@@ -185,7 +190,8 @@ base %>%
  # geom_text(aes(y = revista_factor, x = n , label = n), hjust = 2) +
   theme_bw() +
   
-  labs(y = "Periódico", x = "Número de artigos")
+  labs(y = "Periódico", x = "Número de artigos")+
+  ggsave("imagens/grafico_artigos_por_revista.png", dpi = 600, height =6)
 ```
 
 
